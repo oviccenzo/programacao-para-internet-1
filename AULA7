@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            height: 100vh;
+            width: 100vw;
+        }
+
+
+        .container > div{
+            display: flexbox;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        .item1{
+            background-color: blue;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        .item2{
+            background-color: aqua;
+        }
+
+        button{
+            background-color: rebeccapurple;
+            border: none;
+            color: black;
+            width: 50px;
+        }
+
+    </style>
+
+    
+
+</head>
+<body>
+    <div class="container">
+        <div class="item1">
+            <button id="btn1">
+                click me!
+            </button>
+            <button id="btn2">
+                me clica!
+            </button>
+        </div>
+        <div class="item2">
+            <img id="img1" src="https://www.w3schools.com/js/pic_bulboff.gif">
+            https://www.w3schools.com/js/pic_bulboff.gif
+            <p id="legenda1">Legenda da imagem</p>
+
+            <input type="text" id="input1">
+            input
+            <input type="range" id="input2">
+            <p id="legenda2">Valor</p>
+
+        </div>
+    </div>
+    <script>
+        document.getElementById("btn1").onclick = function(){
+            document.getElementById("img1").setAttribute("src", "https://www.w3schools.com/js/pic_bulbon.gif")
+        }
+
+        document.getElementById("btn2").onclick = function(){
+            document.getElementById("img1").setAttribute("src", "https://www.w3schools.com/js/pic_bulbon.gif")
+        }
+        
+        document.getElementById("btn2").addEventListener 
+        ("click", function(){
+            this.style.backgroundColor = "green"
+        })
+        
+        document.getElementById("input1").addEventListener("focus", function(){
+            this.style.backgroundColor = "yellow";
+        })
+
+        document.getElementById("input1").addEventListener("blur", function(){
+            this.style.backgroundColor = "red";
+        })
+
+        document.getElementById("input2").addEventListener("change", function(){
+            var valor = this.value;
+            //var valor = getElementById("input2").value;
+            var msg = `Valor:  ${valor}`;
+            document.getElementById("legenda2").innerHTML = msg;
+            document.getElementById("input1").value = valor;
+        })
+
+
+        
+    </script>
+</body>
+</html>
