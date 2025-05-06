@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criando a tabela</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr 1fr;
+            grid-template-rows: 1fr 6fr 2fr;
+            gap: 5px;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .container > div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .item1{
+            background: darkviolet;
+            grid-column: 1/5;
+            grid-row: 2/1;
+            /*grid-row: 3/4;*/
+        }
+
+        .item2{
+            background: darkgrey;
+            grid-column: 1/2;
+            grid-row: 3/2;
+        }
+
+        .item3{
+            background-color: darkorange;
+            grid-column: 2/4;
+            grid-row: 2/3;
+        }
+
+        .item4{
+            background-color: darkturquoise;
+            grid-column: 1/5;
+            grid-row: 3/4;
+            /*grid-row: 2/1;*/
+        }
+        .item5{
+            background-color: darkslateblue;
+            grid-columns: 1/2;
+            grid-row: 3/2;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="item1">Nome</div>
+    <div class="item2">
+    <ol>
+        <h2>Lista de dado <p>da pessoa</p></h2>
+        <li>CPF</li>
+        <li>Nome</li>
+        <li>Telefone</li>
+        <li>Email</li>
+        <li>Endereço</li>
+    </ol>
+    </div>
+
+    <div class="item3">
+    <ol>
+        <h3>Lista de numero</h3>
+        <li>Num1: 123</li>
+        <li>Num2: 234</li>
+        <li>Num3: 345</li>
+        <li>Num4: 460</li>
+        <li>Num5: 580</li>
+    </ol>
+    </div>
+
+    <div class="item4">
+        <ol>
+            <h3>Lista de animal</h3>
+            <li>Porco</li>
+            <li>zebra</li>
+            <li>vaca</li>
+            <li>lobo</li>
+        </ol>
+    </div>
+    <div class="item5">
+        <ol>
+            <h3>Lista de carro</h3>
+            <li>Honda fit</li>
+            <li>Chevrolet</li>
+            <li>Prata</li>
+            <li>Chevrolet impala 1967</li>
+        </ol>
+
+    </div>
+
+</div>
+</body>
+</html>
