@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TODO List Simples</title>
+  <script src="scripts.js" defer></script>
+  <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+  <div class="todo-container">
+    <h2>Minha TODO List</h2>
+    <div class="todo-input">
+      <input type="text" id="taskInput" placeholder="Digite uma nova tarefa">
+      <button id="addbtn" onclick="addTask()">Adicionar</button>
+    </div>
+    <ul class="todo-list" id="todoList">
+      <li class="todo-item">
+        <span>
+        Comprar pao
+      </span>
+      <span>
+        <button class="done-btn" onclick="deleteTask(this)">Feito!</button>
+        <button class="delete-btn" onclick="deleteTask(this)">Excluir</button>
+      </span>
+      </li>
+      <span>
+      <li class="todo-item">
+        Estudar HTML
+      </li>
+      <span>
+        <button class="done-btn" onclick="deleteTask(this)">Feito!</button>
+        <button class="delete-btn" onclick="deleteTask(this)">Excluir</button>
+      </span>
+  
+    </span>
+      <li class="todo-item"><span>Adicionar um botao azul para 
+        marcar a tarefa como completada.Ao clicar no botao , o texto 
+        da tarefa da tarefa fica tachado
+      </span></li>
+
+    </ul>
+  </div>
+</body>
+</html>
+
