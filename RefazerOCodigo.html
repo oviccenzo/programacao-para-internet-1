@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 
-
+<style></style>
 
 
 <body>
@@ -16,11 +16,18 @@
             <input type="text" id="taskInput" placeholder="Digite uma nova tarefa">
             <button id="addbtn" onclick="addTask()">Adicionar</button>
         </div>
-        <ul class="todo-list">
+        <ul class="todo-list" id="todoList">
             <li class="todo-item"><span class="taskText">Adicionar um botao azul para marcar a tarefa como completa.
-                Ao clicar no botao, o texto da tarefa<span class="done">tachado</span>.</span></li>
-            <li>
-                
+                Ao clicar no botao, o texto da tarefa<span class="done">tachado</span>.</span>
+            </li>
+            <li class="todo-item">
+                <span class="taskText">
+                    Comprar pao
+                </span>
+                <span>
+                    <button class="done-btn" onclick="doneTask(this)">Feitp!</button>
+                    <button class="delete-btn" onclick="deleteTask(this)">Excluir!</button>
+                </span>
             </li>
         </ul>
     </div>
