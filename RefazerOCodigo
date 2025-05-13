@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+<body>
+    <div class="todo-container">
+        <h2>Minha lista todo</h2>
+        <div class="todo-input">
+            <input type="text" id="taskInput" placeholder="Digite uma nova tarefa">
+            <button id="addbtn" onclick="addTask()">Adicionar</button>
+        </div>
+        <ul class="todo-list">
+            <li class="todo-item"><span class="taskText">Adicionar um botao azul para marcar a tarefa como completa.
+                Ao clicar no botao, o texto da tarefa<span class="done">tachado</span>.</span></li>
+            <li>
+                
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
