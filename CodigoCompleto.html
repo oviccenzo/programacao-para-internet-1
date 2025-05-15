@@ -1,0 +1,152 @@
+<!DOCTYPE>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtch=device-width, initial-scale=1.0">
+    <title>Aula 8 - criacao e remocao do elemento dom</title>
+    <style>
+       body{
+           font-family: Arial, sans-serif;
+           background: #f0f2f5;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding-top: 50px;
+       }
+       .todo-container{
+           background: white;
+           padding: 20px 30px;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+           width: 100%;
+           max-width: 400px;
+       }
+       h2{
+           text-align: center;
+           margin-bottom: 20px
+       }
+       .todo-input{
+           display: flex;
+           gap: 10px;
+           margin-bottom: 20px;
+       }
+       .todo-input input{
+           flex: 12px;
+           padding: 10px;
+           font-size: 16px;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+       }
+       .todo-input button{
+           padding: 10px 20px;
+           background: #4CAF50;
+           color: white;
+           border: none;
+           border-radius: 5px;
+           cursor: pointer;
+       }
+       .todo-list{
+           list-style: none;
+           padding: 0;
+       }
+       .todo-item{
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           background: #f9f9f9;
+           padding: 10px;
+           margin-bottom: 10px;
+           border-radius: 5px;
+       }
+       .delete-btn{
+           background: #e74c3c;
+           color: white;
+           border: none;
+           border-radius: 4px;
+           padding: 5px 10px;
+           cursor: pointer;
+       }
+       .done-btn{
+           background: #4C39F7;
+           color: white;
+           border: none;
+           border-radius: 4px;
+           padding: 5px 10px;
+           cursor: pointer;
+       }
+       .done-btn-a{
+           background: #ccddff;
+       }
+       .done{
+           text-decoration: line-through;
+       }
+    </style>
+</head>
+<body>
+<main>
+    <div class="todo-container">
+        <h2>Minha lista toda</h2>
+        <div class="todo-input">
+            <input type="text" id="taskInput" placeholder="Digite uma nova tarefa">
+            <button id="addbtn" onclick="addTask()">Adicionar</button>
+        </div>
+        <ul class="todo-list" id="todoList">
+            <li class="todo-item"><span class="taskText">Adicionar um botão azul para marcar a tarefa como completada.
+                Ao clicar no botão, o texto da tarefa fica<span class="done">tachado</span>.</span></li>
+            <li class="todo-item">
+                <span class="todo-item">Comprar pão de queijo</span>
+                <span>
+                    <button class="done-btn" onclick="doneTask(this)">Feito!</button>
+                    <button class="delete-btn" onclick="deleteTask(this)">Excluir!</button>
+                </span>
+            </li>
+            <li class="todo-item">
+                <span class="taskText">Estudar programação html</span>
+                <span>
+                    <button class="done-btn" onclick="doneTask(this)">Feito!</button>
+                    <button class="delete-btn" onclick="deleteTask(this)">Excluir!</button>
+                </span>
+            </li>
+        </ul>
+    </div>
+</main>
+</body>
+</html>
+<script>
+    function addTask(){
+        const input = document.getElementById("taskInput");
+        const taskText = input.value.trim();
+
+        if (taskText == ""){
+            alert("Digite uma tarefa!");
+            return;
+        }
+
+        const list = document.getElementById("todoList");
+        const li = document.createElement("li");
+        li.className = "todo-item";
+        li.innerHTML = `
+    <span class="taskText">
+    ${taskText}
+    </span>
+    <span>
+    <button class="done-btn" onclick="doneTask(this)">Feito!</button>
+    <button class="delete-btn" onclick="deleteTask(this)">Excluir</button>
+    </span>
+    `;
+
+        list.appendChild(li);
+        input.value = "";
+    }
+
+    function deleteTask(button){
+        const li = button.parentElement.parentElement;
+        li.remove();
+    }
+
+    function doneTask(button){
+        const texto = button.parentElement.previousElementSibling;
+        texto.classList.toggle("done");
+        button.classList.toggle("done-btn-a");
+    }
+</script>
