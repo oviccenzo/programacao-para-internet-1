@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+
+    .container{
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "menu content content"
+        "menu ads cc";
+        grid-gap: 5px;
+        grid-template-rows: repeat(3,1fr);
+        height: 100vh;
+    }
+
+    .container > div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight:600 ;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    #header{
+        grid-area: header;
+        background-color: lightsalmon;
+    }
+
+    #menu{
+        grid-area: menu;
+        background-color: lightseagreen;
+    }
+
+    #content{
+        grid-area: content;
+        background-color: lightgreen;
+    }
+
+    #ads{
+        grid-area: ads;
+        background-color: red;
+    }
+
+    #cc{
+        grid-area: cc;
+        background-color: lightseagreen;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div id="header">Header</div>
+        <div id="menu">Menu</div>
+        <div id="content">Const</div>
+        <div id="ads">ads</div>
+        <div id="cc">cc</div>
+    </div>
+</body>
+</html>
