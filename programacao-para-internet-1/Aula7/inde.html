@@ -21,7 +21,7 @@
 
 
         .container > div{
-            display: flexbox;
+            display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -37,7 +37,7 @@
         .item2{
             background-color: aqua;
         }
-        
+
         .item3{
             background-color: brown;
             height: 50px;
@@ -49,7 +49,7 @@
             row-gap: 10px;
         }
 
-        
+
 
         button{
             background-color: rebeccapurple;
@@ -60,82 +60,82 @@
 
     </style>
 
-    
+
 
 </head>
 <body>
-    <div class="container">
-        <div class="item1">
-            <button id="btn1">
-                click me!
-            </button>
-            <button id="btn2">
-                me clica!
-            </button>
-        </div>
-        <div class="item2">
-            <img id="img1" src="https://www.w3schools.com/js/pic_bulboff.gif">
-            https://www.w3schools.com/js/pic_bulboff.gif
-            <p id="legenda1">Legenda da imagem</p>
-
-            <input type="text" id="input1">
-            input
-            <input type="range" id="input2">
-            <p id="legenda2">Valor</p>
-
-            <div class="item3" id="item3">x , y</div>
-
-        </div>
+<div class="container">
+    <div class="item1">
+        <button id="btn1">
+            click me!
+        </button>
+        <button id="btn2">
+            me clica!
+        </button>
     </div>
-    <script>
-        document.getElementById("btn1").onclick = function(){
-            document.getElementById("img1").setAttribute("src", "https://www.w3schools.com/js/pic_bulbon.gif")
-        }
+    <div class="item2">
+        <img id="img1" src="https://www.w3schools.com/js/pic_bulboff.gif">
+        https://www.w3schools.com/js/pic_bulboff.gif
+        <p id="legenda1">Legenda da imagem</p>
 
-        document.getElementById("btn2").onclick = function(){
-            document.getElementById("img1").setAttribute("src", "https://www.w3schools.com/js/pic_bulbon.gif")
-        }
-        
-        document.getElementById("btn2").addEventListener 
-        ("click", function(){
-            this.style.backgroundColor = "green"
-        })
-        
-        document.getElementById("input1").addEventListener("focus", function(){
-            this.style.backgroundColor = "yellow";
-        })
+        <input type="text" id="input1">
+        input
+        <input type="range" id="input2">
+        <p id="legenda2">Valor</p>
 
-        document.getElementById("input1").addEventListener("blur", function(){
-            this.style.backgroundColor = "red";
-        })
+        <div class="item3" id="item3">x , y</div>
 
-        document.getElementById("input2").addEventListener("change", function(){
-            var valor = this.value;
-            //var valor = getElementById("input2").value;
-            var msg = `Valor:  ${valor}`;
-            document.getElementById("legenda2").innerHTML = msg;
-            document.getElementById("input1").value = valor;
-        })
+    </div>
+</div>
+<script>
+    document.getElementById("btn1").onclick = function(){
+        document.getElementById("img1").setAttribute("src", "https://www.w3schools.com/js/pic_bulbon.gif")
+    }
 
-        document.getElementById("input2").addEventListener("mousemove", function(){
-            var valor = this.value;
-            //var valor = getElementById("input2").value;
-            var msg = `Valor:  ${valor}`;
-            document.getElementById("legenda2").innerHTML = msg;
-            document.getElementById("input1").value = valor;
-        })
+    document.getElementById("btn2").onclick = function(){
+        document.getElementById("img1").setAttribute("src", "https://www.w3schools.com/js/pic_bulbon.gif")
+    }
 
-        document.getElementById("item3").addEventListener("mousemove", function(){
-            this.style.backgroundColor = 'yellow';
-        })
+    document.getElementById("btn2").addEventListener
+    ("click", function(){
+        this.style.backgroundColor = "green"
+    })
 
-        document.getElementById("item3").addEventListener("mousemove", function(event){
-            var x = event.x - this.offsetLeft;
-            var y = event.y - this.offsetTop;
-            var msg = `${x} , ${y}`
-            this.innerHTML = msg;
-        })
-        
-    </script>
+    document.getElementById("input1").addEventListener("focus", function(){
+        this.style.backgroundColor = "yellow";
+    })
+
+    document.getElementById("input1").addEventListener("blur", function(){
+        this.style.backgroundColor = "red";
+    })
+
+    document.getElementById("input2").addEventListener("change", function(){
+        var valor = this.value;
+        //var valor = getElementById("input2").value;
+        var msg = `Valor:  ${valor}`;
+        document.getElementById("legenda2").innerHTML = msg;
+        document.getElementById("input1").value = valor;
+    })
+
+    document.getElementById("input2").addEventListener("mousemove", function(){
+        var valor = this.value;
+        //var valor = getElementById("input2").value;
+        var msg = `Valor:  ${valor}`;
+        document.getElementById("legenda2").innerHTML = msg;
+        document.getElementById("input1").value = valor;
+    })
+
+    document.getElementById("item3").addEventListener("mousemove", function(){
+        this.style.backgroundColor = 'yellow';
+    })
+
+    document.getElementById("item3").addEventListener("mousemove", function(event){
+        var x = event.x - this.offsetLeft;
+        var y = event.y - this.offsetTop;
+        var msg = `${x} , ${y}`
+        this.innerHTML = msg;
+    })
+
+</script>
 </body>
 </html>
